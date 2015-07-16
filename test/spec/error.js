@@ -9,7 +9,9 @@ function reject(path, info) {
 describe('fs-find:', function() {
 
   it('should error on bad symlink w/ followLinks', function(done) {
-    find(['test/fixtures/bad-symlink'], {followLinks: true}, function(err, files) {
+    var paths = ['test/fixtures/bad-symlink']
+      , opts = {followLinks: true};
+    find(paths, opts, function(err, files) {
       function fn() {
         throw err;
       }
