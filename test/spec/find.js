@@ -3,9 +3,29 @@ var expect = require('chai').expect
 
 describe('fs-find:', function() {
 
-  it('should find files', function(done) {
+  it('should callback with no files on no paths', function(done) {
     var base = 'test/fixtures/mock';
-    find([base], function(err, files) {
+    find([], function(err, files) {
+      if(err) {
+        return done(err) ;
+      }
+      done();
+    })
+  });
+
+  it('should callback with no files on no paths', function(done) {
+    var base = 'test/fixtures/mock';
+    find(function(err, files) {
+      if(err) {
+        return done(err) ;
+      }
+      done();
+    })
+  });
+
+  it('should find files w/ string path', function(done) {
+    var base = 'test/fixtures/mock';
+    find(base, function(err, files) {
       if(err) {
         return done(err) ;
       }
