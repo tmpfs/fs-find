@@ -17,11 +17,13 @@ find(path, function(err, results) {
 
 ### Options
 
+* `dirs`: Include directories in results array (default: `false`).
 * `filter`: Generic filter function before `stat` is called.
 * `file`: Filter function for files.
 * `folder`: Filter function for directories.
 * `fullpath`: Use full file path for matching.
 * `followLinks`: Follow symbolic links (`stat` rather than `lstat`).
+* `depth`: Maximum folder depth to recurse.
 
 ### Filter
 

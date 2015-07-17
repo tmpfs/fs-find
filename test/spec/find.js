@@ -31,6 +31,30 @@ describe('fs-find:', function() {
     })
   });
 
+  it('should find files and directories (dirs: true)', function(done) {
+    find(base, {dirs: true}, function(err, files) {
+      if(err) {
+        return done(err) ;
+      }
+      var map = find.map(files);
+      expect(map[base + '/deep']).to.be.an('object');
+      done();
+    })
+  });
+
+  it('should find directories upto max depth (depth: 1)', function(done) {
+    find(base, {dirs: true, depth: 1, file: find.reject}, function(err, files) {
+      if(err) {
+        return done(err) ;
+      }
+      var map = find.map(files);
+      // includes target dir in result
+      expect(map[base]).to.be.an('object');
+      expect(map[base + '/deep']).to.be.an('object');
+      done();
+    })
+  });
+
   it('should find nothing with filter function', function(done) {
     find(base, {filter: reject}, function(err, files) {
       if(err) {
