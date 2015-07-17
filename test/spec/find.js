@@ -1,6 +1,7 @@
 var expect = require('chai').expect
   , find = require('../../lib')
-  , base = 'test/fixtures/mock';
+  , base = 'test/fixtures/mock'
+  , mockfile = 'test/fixtures/mock/empty.txt';
 
 function reject(path, info) {
   return false;
@@ -50,6 +51,22 @@ describe('fs-find:', function() {
       var map = find.map(files);
       // includes target dir in result
       expect(map[base]).to.be.an('object');
+      expect(map[base + '/deep']).to.be.an('object');
+      done();
+    })
+  });
+
+  it('should find files upto w/ depth and exclude)', function(done) {
+    var opts = {dirs: true, depth: 1, exclude: true};
+    find([base, mockfile], opts, function(err, files) {
+      if(err) {
+        return done(err) ;
+      }
+      var map = find.map(files);
+      //console.dir(map)
+      // exclude target dir and files in result
+      expect(map[base]).to.eql(undefined);
+      expect(map[mockfile]).to.eql(undefined);
       expect(map[base + '/deep']).to.be.an('object');
       done();
     })

@@ -4,6 +4,7 @@ Table of Contents
 * [Filesystem Find](#filesystem-find)
   * [Install](#install)
   * [Usage](#usage)
+    * [Arguments](#arguments)
     * [Options](#options)
     * [Filter](#filter)
     * [Info](#info)
@@ -45,6 +46,13 @@ find(path, function(err, results) {
   console.dir(results);
 }
 ```
+
+### Arguments
+
+* `path`: String or array of strings referencing directories or files.
+* `opts`: Processing options, see below.
+* `cb`: Callback function with signature `function(err, results)` where results 
+  is an array of `info` objects.
 
 ### Options
 

@@ -15,9 +15,17 @@ find(path, function(err, results) {
 }
 ```
 
+### Arguments
+
+* `path`: String or array of strings referencing directories and/or files.
+* `opts`: Processing options, see below.
+* `cb`: Callback function with signature `function(err, results)` where results 
+    is an array of `info` objects.
+
 ### Options
 
 * `dirs`: Include directories in results array (default: `false`).
+* `exclude`: Do not include the `path` argument values in the `results`.
 * `filter`: Generic filter function before `stat` is called.
 * `file`: Filter function for files.
 * `folder`: Filter function for directories.
