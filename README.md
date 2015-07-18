@@ -8,7 +8,6 @@ Table of Contents
     * [Options](#options)
     * [Filter](#filter)
     * [Info](#info)
-    * [Events](#events)
   * [Developer](#developer)
     * [Test](#test)
     * [Cover](#cover)
@@ -49,7 +48,7 @@ find(path, function(err, results) {
 
 ### Arguments
 
-* `path`: String or array of strings referencing directories or files.
+* `path`: String or array of strings referencing directories and/or files.
 * `opts`: Processing options, see below.
 * `cb`: Callback function with signature `function(err, results)` where results 
   is an array of `info` objects.
@@ -57,6 +56,7 @@ find(path, function(err, results) {
 ### Options
 
 * `dirs`: Include directories in results array (default: `false`).
+* `exclude`: Do not include the `path` argument values in the `results`.
 * `filter`: Generic filter function before `stat` is called.
 * `file`: Filter function for files.
 * `folder`: Filter function for directories.
@@ -79,11 +79,6 @@ The `info` object contains the fields:
 * `folder`: The parent folder.
 * `matcher`: Either the file path or name depending upon the `fullpath` option.
 * `stat`: An `fs.Stats` object when available.
-
-### Events
-
-* `entry`: Emitted when a `stat` is available.
-* `unsupported`: Emitted when a file is not a file, folder or symbolic link.
 
 ## Developer
 

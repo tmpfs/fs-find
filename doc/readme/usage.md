@@ -48,8 +48,3 @@ The `info` object contains the fields:
 * `folder`: The parent folder.
 * `matcher`: Either the file path or name depending upon the `fullpath` option.
 * `stat`: An `fs.Stats` object when available.
-
-### Events
-
-* `entry`: Emitted when a `stat` is available.
-* `unsupported`: Emitted when a file is not a file, folder or symbolic link.

@@ -140,21 +140,4 @@ describe('fs-find:', function() {
     })
   });
 
-  // events
-  it('should emit unsupported event on character device', function(done) {
-    var finder = find(['/dev/null'], function(err, files) {
-      if(err) {
-        return done(err) ;
-      }
-      done();
-    })
-
-    finder.on('unsupported', function(file, info) {
-      //console.dir(arguments) 
-      //console.dir(files)
-      expect(info.stat).to.be.an('object');
-      expect(info.stat.isCharacterDevice()).to.eql(true);
-    })
-  });
-
 });
