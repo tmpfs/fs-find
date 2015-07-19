@@ -63,6 +63,7 @@ find(path, function(err, results) {
 * `fullpath`: Use full file path for matching.
 * `followLinks`: Follow symbolic links (`stat` rather than `lstat`).
 * `depth`: Maximum folder depth to recurse.
+* `absolute`: Make all file paths absolute.
 
 ### Filter
 
