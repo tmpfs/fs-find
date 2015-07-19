@@ -33,6 +33,8 @@ find(path, function(err, results) {
 * `followLinks`: Follow symbolic links (`stat` rather than `lstat`).
 * `depth`: Maximum folder depth to recurse.
 * `absolute`: Make all file paths absolute.
+* `dedupe`: Remove duplicate entries, possible if the `path` array contains 
+    overlapping folders, best used with `absolute` enabled.
 
 ### Filter
 
@@ -49,3 +51,5 @@ The `info` object contains the fields:
 * `folder`: The parent folder.
 * `matcher`: Either the file path or name depending upon the `fullpath` option.
 * `stat`: An `fs.Stats` object when available.
+* `base`: Base directory for the file.
+* `relative`: Path relative to `base`.
