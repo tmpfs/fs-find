@@ -18,6 +18,10 @@ Table of Contents
 Filesystem Find
 ===============
 
+[<img src="https://travis-ci.org/tmpfs/fs-find.svg" alt="Build Status">](https://travis-ci.org/tmpfs/fs-find)
+[<img src="http://img.shields.io/npm/v/fs-find.svg" alt="npm version">](https://npmjs.org/package/fs-find)
+[<img src="https://coveralls.io/repos/tmpfs/fs-find/badge.svg?branch=master&service=github&v=1" alt="Coverage Status">](https://coveralls.io/github/tmpfs/fs-find?branch=master).
+
 Zero-dependency, asynchronous filesystem walk.
 
 Requires [node](http://nodejs.org) and [npm](http://www.npmjs.org).
