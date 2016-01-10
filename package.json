@@ -1,6 +1,6 @@
 {
   "name": "fs-find",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Filesystem recursive asynchronous find",
   "author": "muji <noop@xpm.io>",
   "main": "lib/index",
