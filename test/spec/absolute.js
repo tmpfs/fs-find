@@ -7,7 +7,8 @@ describe('fs-find:', function() {
 
   it('should use absolute path for key', function(done) {
     var opts = {absolute: true, dedupe: true};
-    find(base, opts, function(err, files) {
+    // NOTE: trigger dedupe code path with overlapping paths
+    find([base, base], opts, function(err, files) {
       if(err) {
         return done(err);
       }
