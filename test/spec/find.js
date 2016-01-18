@@ -3,14 +3,14 @@ var expect = require('chai').expect
   , base = 'test/fixtures/mock'
   , mockfile = 'test/fixtures/mock/empty.txt';
 
-function reject(path, info) {
+function reject(/*path, info*/) {
   return false;
 }
 
 describe('fs-find:', function() {
 
   it('should callback with no files on no paths', function(done) {
-    find([], function(err, files) {
+    find([], function(err/*, files*/) {
       if(err) {
         return done(err) ;
       }

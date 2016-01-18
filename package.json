@@ -25,10 +25,11 @@
   "devDependencies": {
     "chai": "~3.4.1",
     "coveralls": "~2.11.6",
-    "istanbul": "~0.4.1",
+    "istanbul": "~0.4.2",
     "mocha": "~2.3.4"
   },
   "scripts": {
+    "lint": "jshint . && jscs .",
     "docs": "npm run readme",
     "clean": "rm -rf coverage target",
     "readme": "mdp --force -v",
