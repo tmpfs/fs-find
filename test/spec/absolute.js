@@ -5,7 +5,7 @@ var expect = require('chai').expect
 
 describe('fs-find:', function() {
 
-  it('should find files w/ string path', function(done) {
+  it('should use absolute path for key', function(done) {
     var opts = {absolute: true, dedupe: true};
     find(base, opts, function(err, files) {
       if(err) {
